@@ -34,4 +34,26 @@ public class Cursos {
     public boolean verificaEspacio() {
         return cupoActual < cupoMaximo;
     }
+    
+        public void inscribirAlumno() {
+        if (verificaEspacio()) {
+            cupoActual++;
+            System.out.println("Alumno inscrito en el curso: " + nombre + ". Cupo actual: " + cupoActual);
+        } 
+        else {
+            System.out.println("No hay cupo disponible en el curso; " + nombre + ".");
+        }
+    }
+
+    public static void main(String[] args) {
+        Cursos curso1 = new Cursos("Matemáticas", 30);
+        Cursos curso2 = new Cursos("Historia", 25);
+
+        curso1.inscribirAlumno();
+        curso1.inscribirAlumno();
+        curso1.inscribirAlumno();
+
+        curso2.inscribirAlumno();
+        curso2.inscribirAlumno();
+    }
 }
